@@ -35,7 +35,7 @@ export default function Contacts() {
 
   return (
     <div className="container-fluid" style={{ maxWidth: '1200px' }}>
-      <div className="d-flex justify-content-end mb-3">
+      <div className="d-flex justify-content-end mb-4">
         <Link to="/add" className="btn btn-success px-4 py-2">
           Add new contact
         </Link>

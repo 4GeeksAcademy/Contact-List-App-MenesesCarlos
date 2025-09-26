@@ -16,23 +16,23 @@ export default function ContactCard({ contact, onDelete }) {
         style={{ width: 110, height: 110, objectFit: 'cover' }} 
       />
       <div className="flex-grow-1">
-        <h5 className="mb-2 fw-bold">{name}</h5>
+        <h5 className="mb-2">{name}</h5>
         <div className="text-muted">
           <div className="mb-1">
-            <i className="fas fa-map-marker-alt me-2"></i>
+            <i className="fas fa-map-marker-alt me-2 text-secondary"></i>
             {address || "—"}
           </div>
           <div className="mb-1">
-            <i className="fa-solid fa-phone-flip me-2"></i>
+            <i className="fa-solid fa-phone-flip me-2 text-secondary"></i>
             {phone}
           </div>
           <div className="mb-0">
-            <i className="fa fa-envelope me-2"></i>
+            <i className="fa fa-envelope me-2 text-secondary"></i>
             {email}
           </div>
         </div>
       </div>
-      <div className="ms-3 d-flex gap-2">
+      <div className="ms-3 d-flex gap-2 align-self-start">
         <Link to={`/edit/${id}`} className="btn btn-outline">
           <i className="fa fa-pencil text-dark"></i>
         </Link>

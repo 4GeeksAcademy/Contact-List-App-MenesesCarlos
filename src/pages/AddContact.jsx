@@ -74,7 +74,7 @@ export default function AddContact() {
 
   return (
     <div className="mx-auto" style={{ maxWidth: 820 }}>
-      <h1 className="display-5 text-center mb-4">
+      <h1 className="display-5 text-center mb-4 fw-bold">
         {editing ? "Edit contact" : "Add a new contact"}
       </h1>
 
@@ -137,7 +137,7 @@ export default function AddContact() {
       </form>
 
       <div className="mt-2">
-        <Link to="/" className="text-muted">or get back to contacts</Link>
+        <Link to="/" className="text-primary-outline">or get back to contacts</Link>
       </div>
     </div>
   );
