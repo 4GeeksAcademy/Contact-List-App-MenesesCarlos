@@ -8,12 +8,12 @@ export default function ContactCard({ contact, onDelete }) {
   const { id, name, email, phone, address } = contact;
 
   return (
-    <div className="d-flex align-items-center py-3 px-5 " style={{ minHeight: '150px' }}>
-      <img 
-        src={avatar(name)} 
-        alt={name} 
-        className="rounded-circle me-5" 
-        style={{ width: 110, height: 110, objectFit: 'cover' }} 
+    <div className="d-flex align-items-center py-3 px-5" style={{ minHeight: '150px' }}>
+      <img
+        src={avatar(name)}
+        alt={name}
+        className="rounded-circle me-5"
+        style={{ width: 110, height: 110, objectFit: 'cover' }}
       />
       <div className="flex-grow-1">
         <h5 className="mb-2">{name}</h5>

@@ -34,32 +34,28 @@ export default function Contacts() {
   };
 
   return (
-    <div className="container-fluid" style={{ maxWidth: '1200px' }}>
-      <div className="d-flex justify-content-end mb-4">
-        <Link to="/add" className="btn btn-success px-4 py-2">
-          Add new contact
-        </Link>
-      </div>
-
-      {store.loading && <p className="text-muted">Loading...</p>}
-      {store.error && <div className="alert alert-danger">{store.error}</div>}
-
-      <div className="border rounded">
-        {Array.isArray(store.contacts) && store.contacts.length > 0 ? (
-          store.contacts.map((contact, index) => (
-            <div key={contact.id}>
-              <ContactCard contact={contact} onDelete={() => setToDelete(contact.id)} />
-              {index < store.contacts.length - 1 && <hr className="my-0" />}
-            </div>
-          ))
-        ) : !store.loading && !store.error ? (
-          <div className="text-center text-muted py-5">
-            <p>No contacts yet</p>
+  <div className="container-fluid" style={{ maxWidth: '1200px' }}>
+    <div className="d-flex justify-content-end mb-4">
+      <Link to="/add" className="btn btn-success px-4 py-2">
+        Add new contact
+      </Link>
+    </div>
+    <div className="border rounded">
+      {Array.isArray(store.contacts) && store.contacts.length > 0 ? (
+        store.contacts.map((contact, index) => (
+          <div key={contact.id}>
+            <ContactCard contact={contact} onDelete={() => setToDelete(contact.id)} />
+            {index < store.contacts.length - 1 && <hr className="my-0" />}
           </div>
-        ) : null}
-      </div>
+        ))
+      ) : (
+        <div className="text-center text-muted py-5">
+          <p>No contacts yet</p>
+        </div>
+      )}
+    </div>
 
-      <ConfirmModal
+    <ConfirmModal
         show={toDelete !== null}
         title="Are you sure?"
         message="If you delete this thing the entire universe will go down!"
@@ -67,5 +63,6 @@ export default function Contacts() {
         onConfirm={onConfirmDelete}
       />
     </div>
-  );
+);
+
 }
